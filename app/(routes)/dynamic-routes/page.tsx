@@ -38,14 +38,6 @@ export default function Page() {
         </li>
         <li className="transition-all duration-300 hover:translate-x-2">
           <Link
-            href="/dynamic-routes/static-params/1234"
-            className="text-gray-400 "
-          >
-            <ArrowNext /> Static parameters
-          </Link>
-        </li>
-        <li className="transition-all duration-300 hover:translate-x-2">
-          <Link
             href="/dynamic-routes/multiple-dynamic-segments/1234/5678"
             className="text-gray-400 "
           >

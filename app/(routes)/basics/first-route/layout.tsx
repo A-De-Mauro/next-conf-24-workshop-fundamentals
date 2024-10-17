@@ -1,4 +1,3 @@
-import ArrowNext from "@/app/components/ArrowNext";
 import Button from "@/app/components/Button";
 import Link from "next/link";
 
@@ -10,18 +9,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <h2 className="text-xl font-bold text-white mb-4">Side Navigation</h2>
         <ul className="space-y-2">
           <li className="transition-all duration-300 hover:translate-x-2">
-            <Link href="/one" className="text-cyan-400">
-              One
+            <Link href="/basics" className="text-cyan-400">
+              basics/
             </Link>
           </li>
           <li className="transition-all duration-300 hover:translate-x-2">
-            <Link href="/one/two" className="text-cyan-400">
-              One/Two
+            <Link href="/basics/first-route" className="text-cyan-400">
+              basics/first-route
             </Link>
           </li>
           <li className="transition-all duration-300 hover:translate-x-2">
-            <Link href="/one/two/three" className="text-cyan-400">
-              One/Two/Three
+            <Link
+              href="/basics/first-route/second-route"
+              className="text-cyan-400"
+            >
+              basics/first-route/second-route
             </Link>
           </li>
         </ul>
@@ -30,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Main content */}
       <div className="flex-grow p-4 border-l border-1 border-cyan-500">
         <div className="text-cyan-500 mb-2">
-          Two Layout (children)
+          First Route Layout (children)
           <Button />
         </div>
         {children}

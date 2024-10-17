@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <div className="p-4 bg-gray-800">
-      <h2 className="text-2xl font-bold mb-4">Two Page Content</h2>
+      <h2 className="text-2xl font-bold mb-4">First Route Page Content</h2>
       <p className="mb-4">
         This is the second level of our nested routing example. Notice how the
         layouts are wrapping each other, and the template is providing some
@@ -28,13 +28,16 @@ export default function Page() {
       <div className="space-x-4">
         <ul className="space-y-2">
           <li className="transition-all duration-300 hover:translate-x-2">
-            <Link href="/one" className="text-cyan-400 ">
-              <ArrowPrevious /> Back to One
+            <Link href="/basics" className="text-cyan-400 ">
+              <ArrowPrevious /> Back to basics/
             </Link>
           </li>
           <li className="transition-all duration-300 hover:translate-x-2">
-            <Link href="/one/two/three" className="text-cyan-400">
-              Go to One/Two/Three <ArrowNext />
+            <Link
+              href="/basics/first-route/second-route"
+              className="text-cyan-400"
+            >
+              Go to basics/first-route/second-route <ArrowNext />
             </Link>
           </li>
         </ul>
