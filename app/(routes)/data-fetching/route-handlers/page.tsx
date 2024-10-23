@@ -1,6 +1,4 @@
-import Link from "next/link";
 import AddItem from "./AddItem";
-import ArrowNext from "@/app/components/ArrowNext";
 
 export interface Item {
   name: string;
@@ -13,8 +11,15 @@ async function getItems() {
   return res.json();
 }
 
+async function getItem(id: string) {
+  const res = await fetch(`http://localhost:3000/api/default/${id}`);
+  if (!res.ok) throw new Error("Failed to fetch items");
+  return res.json();
+}
+
 export default async function Page() {
   const items: Item[] = await getItems();
+  const item: Item = await getItem("1");
 
   return (
     <div>
@@ -25,14 +30,12 @@ export default async function Page() {
             key={item.name}
             className="transition-all duration-300 hover:translate-x-2"
           >
-            <Link
-              className="text-yellow-500"
-              href={`/data-fetching/route-handlers/${item.id}`}
-            >
-              <ArrowNext /> {item.name}
-            </Link>
+            {item.name}
           </li>
         ))}
+        <li className="transition-all duration-300 hover:translate-x-2">
+          One (dynamic) item: {item.name}
+        </li>
       </ul>
       <AddItem />
     </div>

@@ -15,7 +15,7 @@ export default function Page() {
           </li>
           <li className="transition-all duration-300 hover:translate-x-2">
             <Link href="/rendering/hydration-mismatch" className="text-red-400">
-              Hydration error <ArrowNext />
+              <ArrowNext /> Hydration error
             </Link>
           </li>
           <li className="transition-all duration-300 hover:translate-x-2">
@@ -23,7 +23,7 @@ export default function Page() {
               href="/rendering/prop-server-component"
               className="text-red-400"
             >
-              Server Components as props <ArrowNext />
+              <ArrowNext /> Server Components as props
             </Link>
           </li>
         </ul>

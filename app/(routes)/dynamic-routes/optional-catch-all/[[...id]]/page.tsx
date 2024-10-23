@@ -1,6 +1,3 @@
-import ArrowPrevious from "@/app/components/ArrowPrevious";
-import Link from "next/link";
-
 export default function Page({ params }: { params: { id?: string[] } }) {
   const { id } = params;
   return (
