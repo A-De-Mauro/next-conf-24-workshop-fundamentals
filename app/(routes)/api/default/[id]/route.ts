@@ -6,10 +6,8 @@ const items = [
   { id: 3, name: "Carlo" },
 ];
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const item = items.find((item) => item.id === parseInt(params.id));
   const searchParams = request.nextUrl.searchParams;
   const searchTerm = searchParams.get("search");

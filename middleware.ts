@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { geolocation, ipAddress } from "@vercel/functions";
 import type { NextRequest } from "next/server";
 
 // Mock data
@@ -7,9 +8,9 @@ const BLOCKED_IPS = new Set(["123.123.123.123", "234.234.234.234"]);
 
 export function middleware(request: NextRequest) {
   // Read the request
-  const country = request.geo?.country || "US";
+  const country = geolocation(request)?.country || "US";
   const userAgent = request.headers.get("user-agent") || "";
-  const clientIp = request.ip || "";
+  const clientIp = ipAddress(request) || "";
   const abTestCookie = request.cookies.get("ab-test");
   const authToken = request.cookies.get("auth-token")?.value;
 
