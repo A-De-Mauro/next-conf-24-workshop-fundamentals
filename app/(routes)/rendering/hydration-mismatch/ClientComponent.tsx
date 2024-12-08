@@ -12,7 +12,9 @@ export default function ClientComponent() {
 
   return (
     <div className="p-4 border-2 border-gray-400">
-      <h2 className="text-2xl font-bold mb-4">Hydration mismatch</h2>
+      <h2 className="text-2xl font-bold mb-4">
+        Hydration mismatch: ${isClient}
+      </h2>
       <ServerComponent />
     </div>
   );
