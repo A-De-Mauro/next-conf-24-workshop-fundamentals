@@ -26,6 +26,7 @@ export default function AddItem() {
         setMessage(errorData.error || "An error occurred");
       }
     } catch (error) {
+      console.error(error);
       setMessage("An error occurred while adding the item");
     }
   };
