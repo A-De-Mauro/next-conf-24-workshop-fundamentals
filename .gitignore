@@ -38,3 +38,6 @@ next-env.d.ts
 # misc
 .history
 .vscode
+
+# v0
+.v0
